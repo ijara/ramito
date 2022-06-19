@@ -1,20 +1,23 @@
 package ijara.dev.ramito.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
 public class Producto {
-    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
     private String sku;
     private String nombre;
-    private ArrayList<Tag> tags;
-    private ArrayList<Tienda> tiendas;
+    @ManyToMany
+    private List<Tag> tags;
+    @ManyToMany
+    private List<Tienda> tiendas;
 
-    public int getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getSku() {
@@ -33,19 +36,23 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public ArrayList<Tag> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(ArrayList<Tag> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 
-    public ArrayList<Tienda> getTiendas() {
+    public List<Tienda> getTiendas() {
         return tiendas;
     }
 
-    public void setTiendas(ArrayList<Tienda> tiendas) {
+    public void setTiendas(List<Tienda> tiendas) {
         this.tiendas = tiendas;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

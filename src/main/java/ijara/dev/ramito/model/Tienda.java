@@ -1,16 +1,36 @@
 package ijara.dev.ramito.model;
 
-public class Tienda {
-    private int id;
-    private int nombre;
-    private int url;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
-    public int getId() {
-        return id;
+@Entity
+public class Tienda {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private int nombre;
+    @OneToMany
+    private List<Url> urls;
+    @OneToMany
+    List<Producto> productos;
+
+    public List<Url> getUrls() {
+        return urls;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUrls(List<Url> urls) {
+        this.urls = urls;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 
     public int getNombre() {
@@ -21,11 +41,11 @@ public class Tienda {
         this.nombre = nombre;
     }
 
-    public int getUrl() {
-        return url;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setUrl(int url) {
-        this.url = url;
+    public Long getId() {
+        return id;
     }
 }

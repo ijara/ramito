@@ -1,16 +1,18 @@
 package ijara.dev.ramito.model;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Tag {
-    private int id;
+
     private String tag;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTag() {
         return tag;
@@ -18,5 +20,13 @@ public class Tag {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

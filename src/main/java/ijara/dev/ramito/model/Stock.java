@@ -1,19 +1,21 @@
 package ijara.dev.ramito.model;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Stock {
-    private int id;
     private int stock;
-    private Tienda tienda;
-    private Producto producto;
-    private Precio precio;
+    @ManyToMany
+    private List<Tienda> tienda;
+    @ManyToMany
+    private List<Producto> producto;
+    @ManyToMany
+    private List<Precio> precio;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getStock() {
         return stock;
@@ -23,27 +25,35 @@ public class Stock {
         this.stock = stock;
     }
 
-    public Tienda getTienda() {
+    public List<Tienda> getTienda() {
         return tienda;
     }
 
-    public void setTienda(Tienda tienda) {
+    public void setTienda(List<Tienda> tienda) {
         this.tienda = tienda;
     }
 
-    public Producto getProducto() {
+    public List<Producto> getProducto() {
         return producto;
     }
 
-    public void setProducto(Producto producto) {
+    public void setProducto(List<Producto> producto) {
         this.producto = producto;
     }
 
-    public Precio getPrecio() {
+    public List<Precio> getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Precio precio) {
+    public void setPrecio(List<Precio> precio) {
         this.precio = precio;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
