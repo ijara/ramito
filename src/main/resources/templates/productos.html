@@ -5,6 +5,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />
+
+<table>
+    <thead>
+    <tr>
+        <th> Producto </th>
+        <th> sku </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${listadoProductos.empty}">
+        <td colspan="2"> No hay productos </td>
+    </tr>
+    <tr th:each="prod : ${listadoProductos}">
+        <td><span th:text="${prod.nombre}"> Title </span></td>
+        <td><span th:text="${prod.sku}"> Author </span></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
 </body>
 </html>
