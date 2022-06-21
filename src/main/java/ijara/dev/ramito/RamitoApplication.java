@@ -17,7 +17,7 @@ public class RamitoApplication {
     public static void main(String[] args) {
         SpringApplication.run(RamitoApplication.class, args);
     }
-    @Bean
+    /*@Bean
     public CommandLineRunner demo(RepoProducto repo){
         return(args) ->{
             Producto prod = new Producto();
@@ -30,5 +30,5 @@ public class RamitoApplication {
             log.info("");
         };
     }
-
+*/
 }
