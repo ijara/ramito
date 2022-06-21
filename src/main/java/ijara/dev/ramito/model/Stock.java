@@ -14,7 +14,7 @@ public class Stock {
     private List<Precio> precio;
     @Id
     @GeneratedValue
-    private Long id;
+    private Long stock_id;
 
 
     public int getStock() {
@@ -49,11 +49,11 @@ public class Stock {
         this.precio = precio;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long stock_id) {
+        this.stock_id = stock_id;
     }
 
     public Long getId() {
-        return id;
+        return stock_id;
     }
 }

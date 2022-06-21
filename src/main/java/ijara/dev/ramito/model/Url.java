@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 public class Url {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long url_id;
     @ManyToOne
     Tienda tienda;
 
@@ -31,11 +31,11 @@ public class Url {
         this.tienda = tienda;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long url_id) {
+        this.url_id = url_id;
     }
 
     public Long getId() {
-        return id;
+        return url_id;
     }
 }

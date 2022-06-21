@@ -10,7 +10,7 @@ import java.util.List;
 public class Tienda {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long tienda_id;
     private int nombre;
     @OneToMany
     private List<Url> urls;
@@ -41,11 +41,11 @@ public class Tienda {
         this.nombre = nombre;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long tienda_id) {
+        this.tienda_id = tienda_id;
     }
 
     public Long getId() {
-        return id;
+        return tienda_id;
     }
 }

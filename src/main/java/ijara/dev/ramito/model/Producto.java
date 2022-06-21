@@ -8,7 +8,7 @@ import java.util.List;
 public class Producto {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private Long producto_id;
     private String sku;
     private String nombre;
     @ManyToMany
@@ -17,7 +17,7 @@ public class Producto {
     private List<Tienda> tiendas;
 
     public Long getId() {
-        return id;
+        return producto_id;
     }
 
     public String getSku() {
@@ -52,7 +52,7 @@ public class Producto {
         this.tiendas = tiendas;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long producto_id) {
+        this.producto_id = producto_id;
     }
 }

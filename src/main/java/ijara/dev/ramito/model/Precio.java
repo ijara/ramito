@@ -8,16 +8,16 @@ import javax.persistence.Id;
 public class Precio {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long precio_id;
     private long precio_base;
     private long precio_especial;
 
     public Long getId() {
-        return id;
+        return precio_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long precio_id) {
+        this.precio_id = precio_id;
     }
 
     public long getPrecio_base() {

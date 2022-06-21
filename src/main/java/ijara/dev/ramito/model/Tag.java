@@ -11,7 +11,7 @@ public class Tag {
     private String tag;
     @Id
     @GeneratedValue
-    private Long id;
+    private Long tag_id;
 
 
     public String getTag() {
@@ -22,11 +22,11 @@ public class Tag {
         this.tag = tag;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long tag_id) {
+        this.tag_id = tag_id;
     }
 
     public Long getId() {
-        return id;
+        return tag_id;
     }
 }
